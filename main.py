@@ -20,7 +20,13 @@ def remove_duplicates(list1):
 
     This function can be iterative.
     """
-    return []
+    new_list = list(list1)
+    
+    for idx in range(len(list1) - 1):
+        if list1[idx] == list1[idx+1]:
+            new_list.remove(list1[idx])
+            
+    return new_list
 
 def intersect(list1, list2):
     """
