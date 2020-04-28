@@ -4,7 +4,7 @@ https://docs.python.org/2/library/unittest.html
 Note that code is designed to be much simpler than unittest
 and does NOT replicate unittest functionality
 """
-import user47_qdKDMRsIRKKjadc_2 as ww
+import user47_qdKDMRsIRKKjadc_4 as ww
 
 class TestSuite:
     """
@@ -41,6 +41,7 @@ class TestSuite:
                
 
 suite = TestSuite()
+# def remove_duplicates(list1) test:
 test_list = [1, 1, 3, 4, 4, 4, 5]
 suite.run_test(ww.remove_duplicates(test_list), [1, 3, 4, 5], 
                "Test 1a: remove_duplicates([1, 1, 3, 4, 4, 4, 5])")
@@ -50,5 +51,19 @@ suite.run_test(ww.remove_duplicates(test_list), [1, 2, 3],
 test_list = []
 suite.run_test(ww.remove_duplicates(test_list), [], 
                "Test 1c: remove_duplicates([])")
+
+# def intersect(list1, list2) test:
+test_list1 = [1, 2, 3]
+test_list2 = [2, 3, 4]
+suite.run_test(ww.intersect(test_list1, test_list2),
+               [2, 3], "Test 2a: intersect([1,2,3],[2,3,4])")
+test_list1 = [1, 2, 2, 3]
+test_list2 = [2, 3, 4]
+suite.run_test(ww.intersect(test_list1, test_list2),
+               [2, 2, 3], "Test 2b: intersect([1,2,2,3],[2,3,4])")
+test_list1 = [1, 2]
+test_list2 = [3, 4]
+suite.run_test(ww.intersect(test_list1, test_list2),
+               [], "Test 2c: intersect([1,2],[3,4])")
 
 suite.report_results()

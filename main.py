@@ -37,7 +37,13 @@ def intersect(list1, list2):
 
     This function can be iterative.
     """
-    return []
+    new_list = []
+    
+    for element in list1:
+        if element in list2:
+            new_list.append(element)
+            
+    return new_list
 
 # Functions to perform merge sort
 
