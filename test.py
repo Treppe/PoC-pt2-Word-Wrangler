@@ -4,7 +4,7 @@ https://docs.python.org/2/library/unittest.html
 Note that code is designed to be much simpler than unittest
 and does NOT replicate unittest functionality
 """
-import user47_qdKDMRsIRKKjadc_4 as ww
+import user47_qdKDMRsIRKKjadc_12 as ww
 
 class TestSuite:
     """
@@ -65,5 +65,20 @@ test_list1 = [1, 2]
 test_list2 = [3, 4]
 suite.run_test(ww.intersect(test_list1, test_list2),
                [], "Test 2c: intersect([1,2],[3,4])")
+
+# def merge(list1, list2) test:
+test_list1 = [1, 2, 3]
+test_list2 = [2, 3, 4]
+suite.run_test(ww.merge(test_list1, test_list2),
+               [1, 2, 3, 4], "Test 3a: merge([1,2,3], [2,3,4])")
+test_list1 = []
+test_list2 = [1, 2]
+suite.run_test(ww.merge(test_list1, test_list2),
+               [1, 2], "Test 3b: merge([], [1, 2])")
+test_list2 = [1, 2, 3]
+test_list1 = [2, 3, 4]
+suite.run_test(ww.merge(test_list1, test_list2),
+               [1, 2, 3, 4], "Test 3a: merge([2,3,4], [1,2,3])")
+
 
 suite.report_results()

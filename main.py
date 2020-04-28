@@ -55,8 +55,20 @@ def merge(list1, list2):
     either list1 or list2.
 
     This function can be iterative.
-    """   
-    return []
+    """
+    copy_list1, copy_list2 = list(list1), list(list2)
+
+    for element in intersect(copy_list1, copy_list2):
+        copy_list1.remove(element)
+    
+    if len(copy_list1) == 0:
+        return copy_list2
+    if len(copy_list2) == 0:
+        return copy_list1
+    if copy_list1[-1] < copy_list2[0]:
+        return copy_list1 + copy_list2
+    
+    return copy_list2 + copy_list1
                 
 def merge_sort(list1):
     """
