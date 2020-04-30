@@ -101,7 +101,19 @@ def gen_all_strings(word):
 
     This function should be recursive.
     """
-    return []
+    if len(word) < 2:
+        return ['', word]
+    first = word[0]
+    rest = word[1:] 
+    rest_strings = gen_all_strings(rest)
+        
+    new_strings = []
+    for string in rest_strings:
+        for pos in range(len(string) + 1):
+            new_strings.append(string[:pos] + first + string[pos:])
+            print new_strings
+           
+    return rest_strings + new_strings
 
 # Function to load words from a file
 

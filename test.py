@@ -4,7 +4,7 @@ https://docs.python.org/2/library/unittest.html
 Note that code is designed to be much simpler than unittest
 and does NOT replicate unittest functionality
 """
-import user47_CQ4L3Ed5vn_4 as ww
+import user47_ifHqvMr9Hm_18 as ww
 
 class TestSuite:
     """
@@ -25,7 +25,7 @@ class TestSuite:
         """
         self.total_tests += 1
         if computed != expected:
-            msg = message + " Computed: " + str(computed)
+            msg = message + " Computed: " + str(computed) + "\n"
             msg += " Expected: " + str(expected)
             print msg
             self.failures += 1
@@ -94,5 +94,11 @@ test_list = [1]
 suite.run_test(ww.merge_sort(test_list), [1], "Test 4e: merge_sort([1])")
 test_list = [1, 1, 2, 3]
 suite.run_test(ww.merge_sort(test_list), [1, 2, 3], "Test 4f: merge_sort([1, 1, 2, 3])")
+
+# def gen_all_strings(word):
+test_word = "aab"
+suite.run_test(ww.gen_all_strings(test_word), 
+               ["", "b", "a", "ab", "ba", "a", "ab", "ba", "aa", "aa", "aab", "aab", "aba", "aba", "baa", "baa"],
+              'Test 5a: gen_all_strings("aab")')
 
 suite.report_results()
