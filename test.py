@@ -4,7 +4,7 @@ https://docs.python.org/2/library/unittest.html
 Note that code is designed to be much simpler than unittest
 and does NOT replicate unittest functionality
 """
-import user47_ifHqvMr9Hm_18 as ww
+import user47_cFuqsWDL6A_27 as ww
 
 class TestSuite:
     """
@@ -70,7 +70,7 @@ suite.run_test(ww.intersect(test_list1, test_list2),
 test_list1 = [1, 2, 3]
 test_list2 = [2, 3, 4]
 suite.run_test(ww.merge(test_list1, test_list2),
-               [1, 2, 3, 4], "Test 3a: merge([1,2,3], [2,3,4])")
+               [1, 2, 2, 3, 3, 4], "Test 3a: merge([1,2,3], [2,3,4])")
 test_list1 = []
 test_list2 = [1, 2]
 suite.run_test(ww.merge(test_list1, test_list2),
@@ -78,7 +78,7 @@ suite.run_test(ww.merge(test_list1, test_list2),
 test_list2 = [1, 2, 3]
 test_list1 = [2, 3, 4]
 suite.run_test(ww.merge(test_list1, test_list2),
-               [1, 2, 3, 4], "Test 3a: merge([2,3,4], [1,2,3])")
+               [1, 2, 2, 3, 3, 4], "Test 3a: merge([2,3,4], [1,2,3])")
 
 # def merge_sort(list1) test:
 test_list = [5, 4, 3, 2, 1]
@@ -93,7 +93,7 @@ suite.run_test(ww.merge_sort(test_list), [1, 2], "Test 4d: merge_sort([2, 1])")
 test_list = [1]
 suite.run_test(ww.merge_sort(test_list), [1], "Test 4e: merge_sort([1])")
 test_list = [1, 1, 2, 3]
-suite.run_test(ww.merge_sort(test_list), [1, 2, 3], "Test 4f: merge_sort([1, 1, 2, 3])")
+suite.run_test(ww.merge_sort(test_list), [1, 1, 2, 3], "Test 4f: merge_sort([1, 1, 2, 3])")
 
 # def gen_all_strings(word):
 test_word = "aab"

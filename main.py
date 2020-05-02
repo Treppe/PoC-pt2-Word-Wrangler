@@ -56,20 +56,29 @@ def merge(list1, list2):
 
     This function can be iterative.
     """
-    copy_list1, copy_list2 = list(list1), list(list2)
-
-    for element in intersect(copy_list1, copy_list2):
-        copy_list1.remove(element)
+    merged_list = []
+    copy_list1 = list(list1)
+    copy_list2 = list(list2)
     
-    if len(copy_list1) == 0:
-        return copy_list2
-    if len(copy_list2) == 0:
-        return copy_list1
-    if copy_list1[-1] < copy_list2[0]:
-        return copy_list1 + copy_list2
+    while True:
+        if len(copy_list1) != 0 and len(copy_list2) !=0:
+            if copy_list1[0] <= copy_list2[0]:
+                merged_list.append(copy_list1[0])
+                copy_list1.pop(0)
+            else:
+                merged_list.append(copy_list2[0])
+                copy_list2.pop(0)
+        elif len(copy_list1) == 0:
+            merged_list += copy_list2
+            break
+        else:
+            merged_list += copy_list1
+            break
+            
+        
+    return merged_list
+ 
     
-    return copy_list2 + copy_list1
-                
 def merge_sort(list1):
     """
     Sort the elements of list1.
@@ -101,8 +110,13 @@ def gen_all_strings(word):
 
     This function should be recursive.
     """
-    if len(word) < 2:
+    # Base Case:
+    if len(word) == 0:
+        return ['']
+    elif len(word) < 2:
         return ['', word]
+    
+    # Recursive Step:
     first = word[0]
     rest = word[1:] 
     rest_strings = gen_all_strings(rest)
@@ -111,7 +125,6 @@ def gen_all_strings(word):
     for string in rest_strings:
         for pos in range(len(string) + 1):
             new_strings.append(string[:pos] + first + string[pos:])
-            print new_strings
            
     return rest_strings + new_strings
 
@@ -123,7 +136,12 @@ def load_words(filename):
 
     Returns a list of strings.
     """
-    return []
+    words_list = []
+    a_file = urllib2.urlopen(codeskulptor.file2url(filename))
+    for line in a_file.readlines():
+        words_list.append(line[:-1])
+        
+    return words_list
 
 def run():
     """
