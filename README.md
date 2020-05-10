@@ -1,6 +1,6 @@
 # Word Wrangler game (mini-project)
 
-My implemetation of Mini-project #6 - Word Wrangler game for course "[Principles of Computing (Part 2)](https://www.coursera.org/learn/principles-of-computing-2?specialization=computer-fundamentals)" by RICE University on Coursera.
+My implemetation of Mini-project #2 - Word Wrangler game for course "[Principles of Computing (Part 2)](https://www.coursera.org/learn/principles-of-computing-2?specialization=computer-fundamentals)" by RICE University on Coursera.
 
 ### Overview (from course project description page)
 
